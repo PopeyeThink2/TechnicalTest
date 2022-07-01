@@ -7,12 +7,23 @@
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'TechnicalTest' " />
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Serilog" Version="2.11.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TechnicalTest.Core\TechnicalTest.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Microsoft.Extensions.DependencyInjection" />
+    <None Remove="Microsoft.Extensions.Logging" />
+    <None Remove="Serilog" />
+  </ItemGroup>
 </Project>
